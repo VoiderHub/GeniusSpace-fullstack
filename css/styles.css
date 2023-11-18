@@ -1,10 +1,9 @@
-
 @font-face {
-  font-display: swap; 
+  font-display: swap;
   font-family: 'Poppins';
   font-weight: 300;
   src: url('../fonts/poppins-v20-latin-300.woff2') format('woff2'),
-       url('../fonts/poppins-v20-latin-300.ttf') format('truetype');
+    url('../fonts/poppins-v20-latin-300.ttf') format('truetype');
 }
 
 @font-face {
@@ -12,7 +11,7 @@
   font-family: 'Poppins';
   font-weight: 400;
   src: url('../fonts/poppins-v20-latin-regular.woff2') format('woff2'),
-       url('../fonts/poppins-v20-latin-regular.ttf') format('truetype');
+    url('../fonts/poppins-v20-latin-regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -20,7 +19,7 @@
   font-family: 'Poppins';
   font-weight: 600;
   src: url('../fonts/poppins-v20-latin-600.woff2') format('woff2'),
-       url('../fonts/poppins-v20-latin-600.ttf') format('truetype'); 
+    url('../fonts/poppins-v20-latin-600.ttf') format('truetype');
 }
 
 @font-face {
@@ -28,9 +27,8 @@
   font-family: 'Poppins';
   font-weight: 900;
   src: url('../fonts/poppins-v20-latin-900.woff2') format('woff2'),
-       url('../fonts/poppins-v20-latin-900.ttf') format('truetype');
+    url('../fonts/poppins-v20-latin-900.ttf') format('truetype');
 }
-
 
 :root {
   --color-primary-dark: #31261a;
