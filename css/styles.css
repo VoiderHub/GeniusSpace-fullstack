@@ -33,8 +33,9 @@
 :root {
   --color-primary-dark: #31261a;
   --color-primary-ligth: #faf4ea;
-  --color-brand-light: #819b57;
+  --color-brand-normal: #819b57;
   --color-brand-dark: #465929;
+  --color-brand-light: #CFCFBC;
 }
 
 /* Base */
@@ -84,8 +85,11 @@ ul {
 }
 
 /* Header */
+.header {
+  background-color: lightgray;
+}
+
 .header-container {
-  background-color: gray;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -93,8 +97,9 @@ ul {
 
 .header-nav {
   display: flex;
-  flex-grow: 1;
   align-items: center;
+  flex-grow: 1;
+  gap: 40px;
 }
 
 .header-menu {
@@ -106,12 +111,13 @@ ul {
 
 /* Button */
 .button {
+  padding: 16px 32px;
   color: var(--color-primary-ligth);
-  background-color: var(--color-brand-light);
-  border: 2px solid var(--color-brand-light);
+  font-weight: 600;
+  background-color: var(--color-brand-normal);
+  border: 2px solid var(--color-brand-normal);
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
 }
 .button:hover {
   background-color: transparent;
@@ -121,16 +127,25 @@ ul {
 /* link */
 .link {
   color: var(--color-primary-ligth);
-  cursor: pointer;
   text-decoration: none;
 }
 .link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 
 /* hero section */
 .hero-section {
   padding: 272px 0;
+  background-image: linear-gradient(
+    103deg,
+    rgba(18, 18, 17, 0.78) 2.03%,
+    rgba(18, 18, 17, 0.6) 58.46%,
+    rgba(18, 18, 17, 0) 90.36%
+  );
+  background-image: url(../images/hero-section-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 .hero-title {
   margin-bottom: 0;
@@ -140,13 +155,13 @@ ul {
   font-weight: 900;
 }
 .hero-title .accent {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 
 /* advantages section */
 .advantages-section {
   padding: 16px 0;
-  background-color: var(--color-brand-light);
+  background-color: var(--color-brand-normal);
 }
 
 .advantages-list {
@@ -175,6 +190,11 @@ ul {
   font-weight: 900;
   line-height: 131.25%; /* 131.25% */
 }
+
+.section-title.centered{
+  text-align: center;
+}
+
 .section-title .accent {
   color: var(--color-brand-dark);
 }
@@ -184,13 +204,13 @@ ul {
   padding-top: 96px;
 }
 
-.traditions-comtainer{
+.traditions-comtainer {
   display: flex;
   justify-content: space-between;
   gap: 40px;
 }
 
-.traditions-content{
+.traditions-content {
   max-width: 710;
 }
 
@@ -207,7 +227,7 @@ ul {
 }
 
 .traditions-text .brand {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
   font-weight: 600;
 }
 .traditions-text .uppercase {
@@ -216,7 +236,17 @@ ul {
 
 /* Chefs section */
 .chefs-section-title {
-  margin-bottom: 80px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.chefs-section-title::before,
+.chefs-section-title::after{
+  display: block;
+  width: 352px;
+  height: 0;
+  border: 2px solid var(--color-brand-light);
+  content: '';
 }
 
 .chef-title {
@@ -225,23 +255,36 @@ ul {
   font-weight: 600;
 }
 
+.chef-nastya{
+  border-radius: 4px 4px 4px 200px;
+
+}
+
 /* Format section */
 .formats-section-title {
   margin-bottom: 80px;
 }
 
-.fornat-card{
+.fornat-card {
   padding: 24px;
+  height: 444px;
+  width: 349px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(49, 38, 26, 0) 55.21%,
+    rgba(49, 38, 26, 0.71) 72.92%,
+    #31261a 100%
+  );
   border: 1px solid gray;
   border-radius: 8px;
 }
 
-.formats-list{
+.formats-list {
   display: flex;
   gap: 20px;
 }
-.formats-item{
-  flex-basis: calc((100%-40px)/3);
+.formats-item {
+  flex-basis: calc((100%-40px) / 3);
 }
 
 .format-title {
@@ -254,8 +297,17 @@ ul {
 }
 
 /* contact section */
-.ontact-section-title {
+.contact-section-title {
   margin-bottom: 16px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-primary-dark);
+  background-image: url(../images/footer-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* footer address */
@@ -266,7 +318,7 @@ ul {
   text-decoration: none;
 }
 .address-link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 .address-copyright {
   font-size: 14px;
