@@ -56,7 +56,7 @@ p {
   margin-top: 0;
 }
 
-a{
+a {
   display: inline-block;
 }
 
@@ -94,7 +94,11 @@ ul {
 
 /* Header */
 .header {
-  background-color: lightgray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 32px;
 }
 
 .header-container {
@@ -136,6 +140,7 @@ ul {
 .link {
   color: var(--color-primary-ligth);
   text-decoration: none;
+  transition: color 0.3s;
 }
 .link:hover {
   color: var(--color-brand-normal);
@@ -150,7 +155,13 @@ ul {
     rgba(18, 18, 17, 0.6) 58.46%,
     rgba(18, 18, 17, 0) 90.36%
   );
-  background-image: url(../images/hero-section-background.jpg);
+  background-image: linear-gradient(
+      103deg,
+      rgba(18, 18, 17, 0.78) 2.03%,
+      rgba(18, 18, 17, 0.6) 58.46%,
+      rgba(18, 18, 17, 0) 90.36%
+    ),
+    url(../images/hero-section-background.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -244,38 +255,48 @@ ul {
 
 /* Chefs section */
 .chefs-section-title {
-  max-width: 535px;
+  position: relative;
   margin: 0 auto 80px;
 }
 
 .chefs-section-title::before,
 .chefs-section-title::after {
+  position: absolute;
   display: block;
+  bottom: 24px;
   width: 352px;
   height: 0;
   border: 2px solid var(--color-brand-light);
   content: '';
 }
 
-.chef-text p{
+.chefs-section-title::before {
+  left: -8px;
+}
+
+.chefs-section-title::after {
+  right: -8px;
+}
+
+.chef-text p {
   margin-bottom: 24px;
 }
 
-.chef-text p:last-child{
+.chef-text p:last-child {
   margin-bottom: 0px;
 }
 
-.chefs-list{
+.chefs-list {
   gap: 30px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.chefs-item{
+.chefs-item {
   flex-basis: calc(100% - 30px / 2);
 }
 
-.chef-card{
+.chef-card {
   display: flex;
   gap: 30px;
 }
@@ -297,13 +318,13 @@ ul {
   margin-bottom: 80px;
 }
 
-.formats-container{
+.formats-container {
   display: flex;
   gap: 32px;
   align-items: center;
 }
 
-.fornat-card {
+.format-card {
   padding: 24px;
   height: 444px;
   width: 349px;
@@ -315,6 +336,11 @@ ul {
   );
   border: 1px solid gray;
   border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.format-card:hover {
+  transform: scale(1.05);
 }
 
 .formats-list {
@@ -354,18 +380,21 @@ ul {
   fill: var(--color-primary-ligth);
 }
 
+.carousel-button.next {
+  transform: rotate(180deg);
+}
 
 /* contact section */
-.contact-section{
+.contact-section {
   padding-bottom: 96px;
 }
 
-.contact-container{
+.contact-container {
   display: flex;
   gap: 32px;
 }
 
-.contact-map{
+.contact-map {
   flex-shrink: 0;
   border: none;
   border-radius: 16px;
@@ -376,45 +405,56 @@ ul {
 }
 
 /* Footer */
-.footer{
-  padding: 32px 0;
-}
-
-.footer-container{
-  display: flex;
-  gap: 20px;
-}
-
-.footer-nav, 
-.footer-address{
-  margin: 0;
-  display: flex;
-  flex-basis: 50%;
-  gap: 20px;
-}
-.footer-address-item{
-  margin: 0;
-}
-
-
-.footer-menu,
-.footer-logo{
-  margin: 0;
-  flex-grow: 1;
-}
-
-.address-list,
-.address-info{
-  margin: 0;
-  flex-grow: 1;
-}
-
 .footer {
+  padding: 32px 0;
+  position: relative;
   background-color: var(--color-primary-dark);
   background-image: url(../images/footer-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.footer::before {
+  width: 180px;
+  height: 120px;
+  left: 0;
+  background-image: url(../images/decor-bread-small.png);
+}
+
+.footer::after {
+  width: 380px;
+  height: 190px;
+  right: 0;
+  background-image: url(../images/decor-bread-large.png);
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav,
+.footer-address {
+  margin: 0;
+  display: flex;
+  flex-basis: 50%;
+  gap: 20px;
+}
+.footer-address-item {
+  margin: 0;
+}
+
+.footer-menu,
+.footer-logo {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.address-list,
+.address-info {
+  margin: 0;
+  flex-grow: 1;
 }
 
 /* footer address */
@@ -435,4 +475,50 @@ ul {
 
 .address-copyright {
   font-size: 14px;
+}
+
+.footer::before,
+.footer::after {
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat;
+  content: '';
+}
+
+/* modal */
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 72px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  height: 100%;
+  max-height: 880px;
+  background-color: var(--color-brand-light);
+  border-radius: 32px;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
