@@ -575,7 +575,7 @@ ul {
   max-width: 210px;
 }
 
-.form-terms-link {
+.form-terms__link {
   color: var(--color-primary-dark);
   text-underline-offset: 2px;
 }
