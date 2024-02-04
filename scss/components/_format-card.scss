@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: flex-end;
   height: 444px;
+  // max-width: 326px;
   padding: 24px;
   background-image: linear-gradient(
     180deg,
@@ -11,13 +12,12 @@
     rgba(49, 38, 26, 0.71) 72.92%,
     #31261a 100%
   );
+  overflow: hidden;
   border: 1px solid gray;
   border-radius: 8px;
-  transition: transform 0.2s;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+
+  
 
   &__image {
     position: absolute;
